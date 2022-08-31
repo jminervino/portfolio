@@ -1,0 +1,22 @@
+.central {
+    display: flex;
+    align-items: center;
+    padding-left: 25%;
+    background-color: #0C0C0C;
+    color: white;
+    height: 90vh;
+}
+
+.txt {
+    width: 30%;
+}
+
+.block-welcome {
+    width: 100px;
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: #186366eb;
+    color: #ffff;
+    border-radius: 2px;
+}
