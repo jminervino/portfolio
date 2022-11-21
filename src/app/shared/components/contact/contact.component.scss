@@ -1,15 +1,53 @@
-.contact {
-  background-color: #19142a;
+.all {
+  background-color: #0c151d;
+}
+
+.container {
+  width: 50%;
+}
+
+.container h1 {
+  text-align: center;
+  color: #ffff;
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.container-elements {
   color: #ffff;
 }
 
-.contact-infos {
-  //   width: 20%;
+.container-elements h3 {
+  font-size: 24px;
+  font-weight: 500;
+  height: 20px;
 }
 
-.contact-inputs input {
-  height: 85px;
-  background: none;
-  border: 1px solid #4d475d;
-  border-radius: 10px;
+.icon {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+}
+
+label {
+  padding: 10px;
+  margin-top: 24px;
+  color: #ffff;
+  background-color: black;
+}
+
+.input {
+  background-color: black;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  outline: none;
+  caret-color: #ffff;
+  // height: ;
+  // margin-top: 24px;
+}
+
+.msg {
+  height: 230px;
 }

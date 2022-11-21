@@ -1,8 +1,90 @@
-.container-projects {
-    
+.block-project {
+  position: relative;
+  width: 600px;
+  margin-bottom: 48px;
+  border-radius: 14px;
+  overflow: hidden;
 }
 
-mat-grid-tile {
-    background-color: red;
-    padding: 50px;
+.card-informations {
+  background-color: #080808;
+  color: #ffff;
+  padding: 5px 12px;
+}
+
+.column-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-name h1 {
+  font-family: "Roboto", sans-serif;
+  color: #ffff;
+  font-weight: 500;
+  margin: 8px;
+}
+
+.column-name img {
+  width: 40px;
+}
+
+// .block-project:hover .overlay {
+//   height: 100%;
+//   width: 100%;
+// }
+
+.img-project {
+  display: block;
+  width: 100%;
+}
+
+// buttons project technologies config
+
+.buttons button {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  margin-right: 5px;
+  border-radius: 8px;
+  color: #ffff;
+}
+
+.buttons button img {
+  width: 20px;
+  margin: 4px 6px 4px 2px;
+}
+
+#color-angular {
+  color: #dd2c00;
+  background-color: rgb(221, 44, 0, 0.16);
+}
+#color-spring {
+  color: #8bc34a;
+  background-color: rgb(139, 195, 74, 0.16);
+}
+#color-html {
+  color: #e65100;
+  background-color: rgb(230, 81, 0, 0.16);
+}
+#color-css {
+  color: #0277bd;
+  background-color: rgb(2, 119, 189, 0.16);
+}
+#color-typescript {
+  color: #1976d2;
+  background-color: rgb(25, 118, 210, 0.16);
+}
+#color-mysql {
+  background-color: rgba(245, 128, 25, 0.16);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 117, 143, 0.16) 29%,
+    rgba(245, 128, 25, 0.16) 80%
+  );
+  // background-clip: text;
+  color: #f58019;
+}
+
+.description p {
+  color: #a0aec0;
 }

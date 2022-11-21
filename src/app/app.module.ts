@@ -1,23 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactComponent } from './shared/components/contact/contact.component';
-import { MaterialModule } from './shared/material/material.module';
 import { SharedModule } from './shared/shared.module';
+import { MyhistoryComponent } from './myhistory/myhistory.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ContactComponent
-  ],
+  declarations: [AppComponent, HomeComponent, ContactComponent, MyhistoryComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -25,9 +21,8 @@ import { SharedModule } from './shared/shared.module';
     CoreModule,
     SharedModule,
     BrowserAnimationsModule,
-    MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

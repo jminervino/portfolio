@@ -1,10 +1,31 @@
 <div class="central">
-    <div class="txt">
-        <div class="block-welcome">Bem Vindo</div>
-        <h1>OLÁ, MEU NOME É JOÃO.</h1>
-        <p>Desenvolvedor Full-Stack</p>
-        <p>Sou um jovem de 20 anos com experiênca de 1 ano com desenvolvimento de sistemas, focado no web Full-Stack aberto para os conhecimentos do mercado,</p>
+  <div class="about">
+    <h2>Olá! meu nome é</h2>
+    <h1 class="name">João Victor.</h1>
+
+    <h2 class="function">Desenvolvedor Full-Stack.</h2>
+
+    <div>
+      <p class="text-animation"></p>
     </div>
+
+    <p>
+      Apaixonado por tecnologia, apto e disposto a <br />
+      desbravar tudo de novo que vier!
+    </p>
+    <div class="buttons">
+      <button *ngFor="let button of buttonsHome">
+        <img src="{{ button.img }}" />
+        {{ button.text }}
+      </button>
+    </div>
+  </div>
+  <div class="background-img">
+    <img src="assets/img/AirBrush_20220905114412-removebg.png" alt="" />
+  </div>
 </div>
+<app-skills></app-skills>
 <app-projects></app-projects>
+<app-certificate></app-certificate>
 <app-contact></app-contact>
+<app-myhistory></app-myhistory>

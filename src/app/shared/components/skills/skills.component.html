@@ -1,1 +1,11 @@
-<p>skills works!</p>
+<div class="all">
+  <h1 style="color: #ffff">Skills</h1>
+  <div class="container d-flex">
+    <div *ngFor="let skill of skills" class="m-auto">
+      <div class="d-flex flex-column align-items-center block-skills">
+        <img src="{{ skill.icon }}" alt="" />
+        <h3>{{ skill.name }}</h3>
+      </div>
+    </div>
+  </div>
+</div>

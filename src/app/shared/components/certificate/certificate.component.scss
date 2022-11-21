@@ -1,0 +1,87 @@
+.all {
+  background-color: rgb(12, 18, 29);
+  padding: 200px;
+}
+
+.all h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 34px;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+
+.carousel-container {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  width: 700px;
+  height: 510px;
+  border-radius: 15px;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(0);
+}
+
+.carousel-container img {
+  display: none;
+  margin-left: 50px;
+  border-radius: 15px;
+}
+
+.carousel-container img.image-active {
+  display: block;
+  width: 600px;
+  height: 400px;
+}
+
+// dots/indicators
+
+.carousel-dot-container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 0 5px;
+  background: linear-gradient(
+    90deg,
+    hsla(208, 41%, 8%, 1) 0%,
+    hsla(0, 100%, 19%, 1) 100%
+  );
+  // background-color: #fff;
+  border-radius: 50%;
+  // display: inline-block;
+  transition: opacity 0.6s ease;
+  opacity: 0.5;
+}
+
+.active,
+.dot:hover {
+  opacity: 1;
+}
+
+// name/company of certificate
+
+.carousel-container h2 {
+  margin-bottom: -30px;
+}
+
+.carousel-container h2,
+p {
+  display: none;
+  margin-top: 32px;
+}
+
+.carousel-container h2.name-active,
+p.company-active {
+  display: block;
+  color: #ffff;
+}

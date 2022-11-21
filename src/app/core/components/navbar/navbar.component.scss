@@ -1,7 +1,16 @@
-.btn-cv {
-    background-color: #186366;
-    color: #ffff;
-    border: none;
-    border-radius: 2px;
+li {
+  cursor: pointer;
 }
 
+.btn-cv {
+  background-color: #610000;
+  color: #ffff;
+  border-radius: 2px;
+  text-decoration: none;
+  margin: auto;
+  padding: 10px;
+}
+
+.btn-cv:hover {
+  background-color: #8c0505;
+}

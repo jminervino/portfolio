@@ -1,1 +1,34 @@
-<p>certificate works!</p>
+<div class="all">
+  <h1>Certificados</h1>
+  <div
+    *ngIf="listCertificates && listCertificates.length > 0"
+    class="carousel-container"
+    id="imgs"
+  >
+    <img
+      *ngFor="let certificate of listCertificates; let i = index"
+      [src]="certificate.image"
+      [ngClass]="{ 'image-active': selectedIndex === i }"
+    />
+    <h2
+      *ngFor="let certificate of listCertificates; let i = index"
+      [ngClass]="{ 'name-active': selectedIndex === i }"
+    >
+      {{ certificate.name }}
+    </h2>
+    <p
+      *ngFor="let certificate of listCertificates; let i = index"
+      [ngClass]="{ 'company-active': selectedIndex === i }"
+    >
+      {{ certificate.company }}
+    </p>
+    <div *ngIf="indicators" class="carousel-dot-container">
+      <span
+        *ngFor="let dot of listCertificates; let i = index"
+        class="dot"
+        [ngClass]="{ active: selectedIndex === i }"
+        (click)="selectImage(i)"
+      ></span>
+    </div>
+  </div>
+</div>

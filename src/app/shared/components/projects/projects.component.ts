@@ -1,38 +1,22 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Projects } from 'src/app/core/models/projects';
+import { ProjectsService } from 'src/app/core/services/projects.service';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
+  listProjects: Projects[] = [];
 
-  
-  constructor() { }
+  constructor(
+    private projectsService: ProjectsService,
+    private dialog: MatDialog
+  ) {}
 
-  cards: Object[] = [
-    {
-      nome: "Helpr",
-      tecnologias: ["Angular", "Spring"],
-      banco: "MySQL",
-      repositorio: "https://github.com/jminervino/helpr"
-    },
-    {
-      nome: "Soul-Viagens",
-      tecnologias: ["Angular"],
-      banco: "Firebase",
-      repositorio: "https://github.com/jminervino/projeto-soul-viagens"
-    },
-    {
-      nome: "Goodpay",
-      tecnologias: ["HTML", "CSS", "JavaScript"],
-      banco: undefined,
-      repositorio: "https://github.com/jminervino/GoodPay"
-    },
-  ]; 
-  
   ngOnInit(): void {
+    this.listProjects = this.projectsService.getProjects();
   }
-  
-
 }

@@ -1,22 +1,77 @@
+:root {
+}
+
 .central {
-    display: flex;
-    align-items: center;
-    padding-left: 25%;
-    background-color: #0C0C0C;
-    color: white;
-    height: 90vh;
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  background-color: #000000;
+  color: white;
 }
 
-.txt {
-    width: 30%;
+.about {
+  width: 50%;
+  margin-left: 15%;
 }
 
-.block-welcome {
-    width: 100px;
-    text-align: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    background-color: #186366eb;
-    color: #ffff;
-    border-radius: 2px;
+.about h2 {
+  font-weight: 600;
+  font-size: 35px;
+  color: #830000;
+  // color: #234870;
+}
+
+.about .name {
+  background-image: linear-gradient(
+    45deg,
+    #830000,
+    rgb(32, 122, 197),
+    rgb(65, 235, 218)
+  );
+  color: black;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 100px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.about .function {
+  color: #ffff;
+}
+
+.about span {
+  color: #ffff;
+}
+
+.about p {
+  margin: 40px 0;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 30px;
+  color: #8c8c8c;
+}
+
+.buttons button {
+  background-color: #292929;
+  // background-color: #501B21;
+  color: #ffff;
+  font-weight: 500;
+  padding: 8px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.buttons img {
+  width: 20px;
+}
+
+.background-img {
+  width: 50%;
+}
+
+.background-img img {
+  width: 94%;
+  margin-bottom: 2px;
 }
