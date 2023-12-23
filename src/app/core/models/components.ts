@@ -6,4 +6,5 @@ export interface NavbarLinks {
 export interface ButtonsHome {
   img: string;
   text: string;
+  link?: string;
 }

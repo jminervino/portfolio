@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Timeline } from '../core/models/timesline';
+import { TimelineService } from '../core/services/timeline.service';
 
 @Component({
   selector: 'app-myhistory',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./myhistory.component.scss']
 })
 export class MyhistoryComponent implements OnInit {
-
-  constructor() { }
+  listTimeline: Timeline[] = [];
+  constructor(
+    private timelineService: TimelineService,
+  ) { }
 
   ngOnInit(): void {
+    this.listTimeline = this.timelineService.getTimeslines();
   }
 
 }

@@ -8,12 +8,19 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { HomeComponent } from './home/home.component';
-import { ContactComponent } from './shared/components/contact/contact.component';
 import { SharedModule } from './shared/shared.module';
 import { MyhistoryComponent } from './myhistory/myhistory.component';
 
+
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule }from '@angular/material/list';
+import { MatButtonModule }from '@angular/material/button';
+
+
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ContactComponent, MyhistoryComponent],
+  declarations: [AppComponent, HomeComponent, MyhistoryComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,6 +28,16 @@ import { MyhistoryComponent } from './myhistory/myhistory.component';
     CoreModule,
     SharedModule,
     BrowserAnimationsModule,
+    MatGridListModule,
+    MatCardModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule
+  ],
+  exports: [
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

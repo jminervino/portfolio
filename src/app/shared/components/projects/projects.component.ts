@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { Projects } from 'src/app/core/models/projects';
+import { Projects, Technologies } from 'src/app/core/models/projects';
 import { ProjectsService } from 'src/app/core/services/projects.service';
 
 @Component({
@@ -11,9 +10,13 @@ import { ProjectsService } from 'src/app/core/services/projects.service';
 export class ProjectsComponent implements OnInit {
   listProjects: Projects[] = [];
 
+  redirectToDocumentation(tec: Technologies){
+    if(tec.documentation != null)
+    window.open(tec.documentation, "_blank");
+  }
+
   constructor(
     private projectsService: ProjectsService,
-    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {

@@ -1,8 +1,40 @@
-<div class="allpage">
+<!-- <div class="allpage"> -->
   <!-- Navbar -->
-
-  <div class="container">
-    <p>
+  <!-- <div class="container">
+    <p class="text-motivation">
+      Não importa a velocidade e sim a intensidade, caminhe passo a passo e
+      chegará no seu objetivo. "Somos o que fazemos repetidamente. excelência não é
+      um ato mas sim um hábito" - Aristoteles
+    </p>
+    <mat-grid-list cols="2" rowHeight="130px">
+      <div *ngFor="let timeline of listTimeline; let i = index">
+        <mat-grid-tile *ngIf="i % 2 == 0">
+          <span class="date"> {{ timeline.date }}</span>
+        </mat-grid-tile>
+        <mat-grid-tile *ngIf="i % 2 != 0">
+          <mat-card>
+            <mat-card-title class="title">{{ timeline.title }}</mat-card-title>
+            <mat-card-content
+              ><p class="description">
+                {{ timeline.description }}
+              </p></mat-card-content
+            >
+          </mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile *ngIf="i % 2 != 0"><span class="date"> {{ timeline.date }}</span></mat-grid-tile>
+        <mat-grid-tile *ngIf="i % 2 == 0"
+          ><mat-card>
+            <mat-card-title class="title">{{ timeline.title }}</mat-card-title>
+            <mat-card-content
+              ><p class="description">
+                {{ timeline.description }}
+              </p></mat-card-content
+            >
+          </mat-card>
+        </mat-grid-tile>
+      </div>
+    </mat-grid-list> -->
+    <!-- <p>
       Tudo começou quando eu estava procurando uma oportunidade na área do
       Marketing Digital, naquela época, era um garoto perdido, sem rumo e
       andando no meio do escuro, ate que eu iniciei um projeto em Excel, por não
@@ -28,26 +60,6 @@
     </p>
   </div>
   <div class="container">
-    <div class="textarea">
-      <input type="text" /><input type="text" /><input type="text" /><input
-        type="text"
-      /><input type="text" /><input type="text" /><input type="text" /><input
-        type="text"
-      /><input type="text" /><input type="text" /><input type="text" /><input
-        type="text"
-      /><input type="text" /><input type="text" /><input type="text" /><input
-        type="text"
-      /><input type="text" /><input type="text" /><input type="text" /><input
-        type="text"
-      /><input type="text" /><input type="text" /><input type="text" /><input
-        type="text"
-      /><input type="text" /><input type="text" /><input type="text" /><input
-        type="text"
-      /><input type="text" /><input type="text" /><input type="text" /><input
-        type="text"
-      /><input type="text" /><input type="text" /><input type="text" /><input
-        type="text"
-      />
-    </div>
-  </div>
-</div>
+    -->
+  <!-- </div>
+</div> -->

@@ -1,26 +1,15 @@
-<nav
-  class="navbar navbar-dark navbar-expand-lg"
-  style="background-color: #0c0c0c"
->
+<nav class="navbar navbar-expand-lg">
   <div class="container-fluid">
-    <div
-      class="collapse navbar-collapse d-flex justify-content-around"
-      id="navbarSupportedContent"
-    >
-      <a class="navbar-brand" href="#"
-        ><span>{{ "{" }} </span> João <span>{{ "}" }}</span></a
-      >
+    <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarSupportedContent">
+
+      <a class="navbar-brand" href="#"><span>{{ "{" }} </span> João <span>{{ "}" }}</span></a>
+
       <div>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-link" *ngFor="let links of navbarLinks">
             {{ links.text }}
           </li>
-          <a
-            href="/assets/pdf/curriculo-joao-victor-minervino.pdf"
-            class="btn-cv"
-            target="_blank"
-            download=""
-          >
+          <a href="/assets/pdf/curriculo-joao-victor-minervino.pdf" class="btn-cv" download="">
             Download CV
           </a>
         </ul>
@@ -28,3 +17,35 @@
     </div>
   </div>
 </nav>
+
+<!-- <mat-sidenav-container>
+  <mat-sidenav #sidenav opened="true">
+    <mat-nav-list>
+      <a mat-list-item>Home</a>
+      <a mat-list-item>Home</a>
+      <a mat-list-item>Home</a>
+      <a mat-list-item>Home</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div style="height: 88vh"></div>
+  </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+<!-- <nav class="navbar navbar-dark navbar-expand-lg">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">  João </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarSupportedContent">
+          <div class="d-flex">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-link">Sobre mim</li>
+                  <li class="nav-link">Contate-me</li>
+                  <button class="btn-cv">Download CV</button>
+              </ul>
+          </div>
+      </div>
+  </div>
+</nav> -->

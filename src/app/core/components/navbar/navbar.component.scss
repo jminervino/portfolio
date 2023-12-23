@@ -2,15 +2,43 @@ li {
   cursor: pointer;
 }
 
+
+nav {
+  color: white;
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.navbar-brand span {
+  color: white;
+}
+
+.navbar-brand {
+  color: #DA3239;
+}
+
+.nav-link{
+  font-weight: 500;
+  color: white;
+}
+
 .btn-cv {
-  background-color: #610000;
-  color: #ffff;
-  border-radius: 2px;
+  color: white;
+  background-color: #DA3239;
+  border-radius: 5px;
   text-decoration: none;
   margin: auto;
   padding: 10px;
+  transition: 0.2s;
 }
 
 .btn-cv:hover {
-  background-color: #8c0505;
+  padding: 10px 18px;
+  font-size: 16px;
 }

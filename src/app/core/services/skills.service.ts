@@ -1,10 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Skills } from '../models/skills';
+import { Skills, Stack } from '../models/skills';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SkillsService {
+  private stacks: Stack[] = [
+    {stack: "Frontend", dataCor: 1},
+    {stack: "Backend", dataCor: 2},
+    {stack: "Database", dataCor: 3},
+    {stack: "Mobile", dataCor: 4},
+  ]
+
   private skills: Skills[] = [
     {
       icon: 'assets/img/icons8-html-5-64.png',
@@ -62,6 +69,10 @@ export class SkillsService {
       experience: 'Intermediario',
     },
   ];
+
+  getStacks(): Stack[]{
+    return this.stacks;
+  }
 
   getSkills(): Skills[] {
     return this.skills;

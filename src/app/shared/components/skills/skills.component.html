@@ -1,11 +1,23 @@
 <div class="all">
   <h1 style="color: #ffff">Skills</h1>
-  <div class="container d-flex">
-    <div *ngFor="let skill of skills" class="m-auto">
-      <div class="d-flex flex-column align-items-center block-skills">
-        <img src="{{ skill.icon }}" alt="" />
-        <h3>{{ skill.name }}</h3>
+  <div class="container ">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner d-flex">
+        <div *ngFor="let skill of skills" class="m-auto">
+          <div class="row">
+            <div class="d-flex flex-column align-items-center block-skills carousel-item active col-lg-4">
+              <img src="{{ skill.icon }}" alt="" />
+              <h3>{{ skill.name }}</h3>
+            </div>
+          </div>
+        </div>
       </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
     </div>
   </div>
 </div>

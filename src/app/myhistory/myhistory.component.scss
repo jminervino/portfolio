@@ -1,36 +1,32 @@
 .allpage {
-  height: 100vh;
-  padding: 0;
-  margin: 0;
+  background-color: black;
 }
 
 .container {
-  display: flex;
+  color: #ffff;
 }
 
-.container p {
+.container .text-motivation {
   width: 50%;
-  color: white;
-  font-weight: 500;
-  font-size: 24px;
+  padding-top: 20px;
+  font-size: 18px;
 }
 
-.gif {
-  width: 40%;
-  margin-right: 2%;
+.example-card {
+  max-width: 500px;
 }
 
-.textarea {
-  display: flex;
-  flex-direction: column;
+.date {
+  font-size: 16px;
 }
 
-.textarea input {
-  border: none;
+.description {
+  font-size: .875rem;
+  font-weight: 400;
 }
 
-.textarea input:focus,
-input:active {
-  box-shadow: 0 0 0 0;
-  outline: 0;
+.title{
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding-bottom: 10px;
 }

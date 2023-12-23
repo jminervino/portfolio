@@ -1,14 +1,16 @@
-:root {
-}
 
-.central {
+main {
   display: flex;
   align-items: center;
-  height: 90vh;
-  background-color: #000000;
-  color: white;
+  justify-content: center;
+  background: #151515;
+
 }
 
+
+.bg-img img {
+  width:  80%;
+}
 .about {
   width: 50%;
   margin-left: 15%;
@@ -17,40 +19,29 @@
 .about h2 {
   font-weight: 600;
   font-size: 35px;
-  color: #830000;
+  color: white;
   // color: #234870;
 }
 
-.about .name {
-  background-image: linear-gradient(
-    45deg,
-    #830000,
-    rgb(32, 122, 197),
-    rgb(65, 235, 218)
-  );
-  color: black;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+.dev-name{
+  color: white;
   font-size: 100px;
   font-weight: 600;
   line-height: 1.1;
 }
 
 .about .function {
-  color: #ffff;
+  color: #DA3239;
 }
 
-.about span {
-  color: #ffff;
-}
 
 .about p {
   margin: 40px 0;
   font-weight: 400;
   font-size: 30px;
   line-height: 30px;
-  color: #8c8c8c;
+  color: white;
 }
 
 .buttons button {
@@ -61,6 +52,12 @@
   padding: 8px 20px;
   margin-right: 10px;
   border-radius: 5px;
+  border: none;
+  transition: 0.2s;
+}
+
+.buttons button:hover {
+  padding: 12px 24px;
 }
 
 .buttons img {
@@ -69,6 +66,7 @@
 
 .background-img {
   width: 50%;
+  z-index: 1;
 }
 
 .background-img img {

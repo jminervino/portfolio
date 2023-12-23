@@ -3,3 +3,8 @@ export interface Skills {
   name: string;
   experience: string;
 }
+
+export interface Stack {
+  stack: string;
+  dataCor: number;
+}

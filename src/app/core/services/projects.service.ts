@@ -5,34 +5,30 @@ import { Projects } from '../models/projects';
   providedIn: 'root',
 })
 export class ProjectsService {
-  // ,
-  //       'CSS',
-  //       'JavaScript',
-  //       'Angular',
-  //       'TypesScript',
-  //       'Bootstrap',
-  //       'Java',
-  //       'Spring Boot',
+
   private project: Projects[] = [
     {
       image:
-        'https://claracloud.com.br/wp-content/uploads/2021/02/google-workspace.jpg',
+        'assets/img/helpr.jpeg',
       name: 'Helpr',
       technologies: [
         {
           name: 'Angular',
           color: 'color-angular',
           icon: '../../../../assets/img/icons8-angularjs-64.png',
+          documentation: "https://angular.io/docs",
         },
         {
           name: 'Spring Boot',
           color: 'color-spring',
           icon: '../../../../assets/img/icons8-spring-logo-64.png',
+          documentation: "https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/",
         },
         {
           name: 'TypesScript',
           color: 'color-typescript',
           icon: '../../../../assets/img/icons8-typescript-64.png',
+          documentation: "https://www.typescriptlang.org/docs/"
         },
         {
           name: 'MySQL',
@@ -44,25 +40,39 @@ export class ProjectsService {
       description:
         'Projeto desenvolvido com os Bootcampers de Java Spring com Angular e Firebase. Desenvolvido para criação de uma POC de atendimento de serviços de API com uso de Framework Spring Boot.',
       repository: 'https://github.com/jminervino/helpr',
+      ano: "2022"
     },
     {
-      image: './assets/img/projeto-copia-login-instagram.png',
-      name: 'Copia Login Instagram',
+      image:
+        'assets/img/goodpay.jpeg',
+      name: 'GoodPay',
       technologies: [
         {
           name: 'HTML',
           color: 'color-html',
           icon: '../../../../assets/img/icons8-html-5-64.png',
+          documentation: "https://html.com/document/",
         },
         {
           name: 'CSS',
           color: 'color-css',
           icon: '../../../../assets/img/icons8-css3-64.png',
+          documentation: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        },
+        {
+          name: 'JavaScript',
+          color: 'color-javascript',
+          icon: '../../../../assets/img/icons8-javascript-64.png',
+          documentation: "https://javascript.info",
         },
       ],
-      description: 'Copia do Login do Instagram com CSS e HTML puro',
-      repository: 'https://github.com/jminervino/interface-instagram-login',
+      database: 'MySQL',
+      description:
+        'A Goodpay é uma plataforma de pagamento desenvolvida durante o bootcamp da Soulcode, com o objetivo de aplicar e aprimorar os conhecimentos adquiridos em HTML5, CSS3 e Bootstrap.',
+      repository: 'https://github.com/jminervino/helpr',
+      ano: "2022"
     },
+
     {
       image: './assets/img/flexpag-frontend.png',
       name: 'Desafio Flexpag',
@@ -71,12 +81,14 @@ export class ProjectsService {
           name: 'Angular',
           color: 'color-angular',
           icon: '../../../../assets/img/icons8-angularjs-64.png',
+          documentation: "https://angular.io/docs"
         },
 
         {
           name: 'TypesScript',
           color: 'color-typescript',
           icon: '../../../../assets/img/icons8-typescript-64.png',
+          documentation: "https://www.typescriptlang.org/docs/"
         },
         // 'Moment.js',
         // 'Angular 9.0',
@@ -87,9 +99,31 @@ export class ProjectsService {
       description:
         'Projeto proposto pela empresa FlexPag onde temos um historico de cotação com dados externos,  ',
       repository: 'https://github.com/jminervino/flexpag-desafio-frontend',
+      ano: "2022"
+    },
+    {
+      image: './assets/img/projeto-copia-login-instagram.png',
+      name: 'Copia Login Instagram',
+      technologies: [
+        {
+          name: 'HTML',
+          color: 'color-html',
+          icon: '../../../../assets/img/icons8-html-5-64.png',
+          documentation: "https://html.com/document/"
+        },
+        {
+          name: 'CSS',
+          color: 'color-css',
+          icon: '../../../../assets/img/icons8-css3-64.png',
+          documentation: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+        },
+      ],
+      description: 'Copia do Login do Instagram com CSS e HTML puro',
+      repository: 'https://github.com/jminervino/interface-instagram-login',
+      ano: "2021"
     },
   ];
-  
+
   getProjects() {
     return this.project;
   }

@@ -1,6 +1,6 @@
-.all {
-  background-color: #0c151d;
-}
+// .all {
+//   background-color: #0c151d;
+// }
 
 .container {
   width: 50%;
@@ -50,4 +50,18 @@ label {
 
 .msg {
   height: 230px;
+}
+
+
+.contactBtn {
+  color: #ffff;
+  background: none;
+  border: 1px solid #ad2121;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px 0;
+}
+
+.contactBtn:hover {
+  background-color: #eb242428;
 }

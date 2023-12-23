@@ -1,17 +1,33 @@
-<div style="background-color: #0c151d">
+<main>
   <div class="container">
-    <h1>Projetos</h1>
+    <h1 class="area-name">Projetos</h1>
+
     <div class="row">
       <div class="col" *ngFor="let project of listProjects">
-        <div class="block-project">
-          <img class="img-project" src="{{ project.image }}" />
+
+        <div class="card-project">
+
+          <div class="container-image">
+            <img class="img-project" src="{{ project.image }}" />
+            <a [href]="project.repository" target="_blank" class="git-link" >
+              <img class="git-image" src="../../../../assets/img/icons8-github-120.png" />
+            </a>
+          </div>
+
           <div class="card-informations">
             <div class="column-name">
               <h1>{{ project.name }}</h1>
-              <a href="{{ project.repository }}"><img src="../../../../assets/img/icons8-github-64.png" alt="" /></a>
+              <a href="{{ project.repository }}"
+                ><img src="../../../../assets/img/icons8-github-64.png" alt=""
+              /></a>
             </div>
             <div class="buttons d-flex">
-              <button *ngFor="let tec of project.technologies" class="d-flex" id="{{ tec.color }}">
+              <button
+                *ngFor="let tec of project.technologies"
+                class="d-flex"
+                id="{{ tec.color }}"
+                (click)="redirectToDocumentation(tec)"
+              >
                 <img src="{{ tec.icon }}" />
                 {{ tec.name }}
               </button>
@@ -25,4 +41,4 @@
       </div>
     </div>
   </div>
-</div>
+</main>

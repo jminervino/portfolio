@@ -26,9 +26,20 @@ export class CertificateComponent implements OnInit {
     if (this.imgs)
       this.imgs.style.transform = `translateX(${-this.selectedIndex * 600}px)`;
   }
-  
+
   selectImage(index: number): void {
     this.selectedIndex = index;
+  }
+
+  next(){
+    if(this.selectedIndex > 1) return;
+    this.selectedIndex++;
+  }
+
+  previus(){
+    if(this.selectedIndex <= 0) return;
+
+    this.selectedIndex--;
   }
 
   ngOnInit(): void {

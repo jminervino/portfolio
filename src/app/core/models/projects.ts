@@ -5,10 +5,12 @@ export interface Projects {
   database?: string;
   description: string;
   repository: string;
+  ano: string;
 }
 
-interface Technologies {
+export interface Technologies {
   name: string;
   color: string;
   icon: string;
+  documentation?: string;
 }
