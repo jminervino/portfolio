@@ -1,50 +1,119 @@
-<div class="all">
-  <h1>Certificados</h1>
-  <div
-    *ngIf="listCertificates && listCertificates.length > 0"
-    class="carousel-container"
-    id="imgs"
-  >
-
-    <img
-      *ngFor="let certificate of listCertificates; let i = index"
-      [src]="certificate.image"
-      [ngClass]="{ 'image-active': selectedIndex === i }"
-    />
-
-    <h2
-      *ngFor="let certificate of listCertificates; let i = index"
-      [ngClass]="{ 'name-active': selectedIndex === i }"
-    >
-
-      {{ certificate.name }}
-    </h2>
-
-    <p
-      *ngFor="let certificate of listCertificates; let i = index"
-      [ngClass]="{ 'company-active': selectedIndex === i }"
-    >
-      {{ certificate.company }}
-    </p>
-
-    <div *ngIf="indicators" class="carousel-dot-container">
-      <span
-        *ngFor="let dot of listCertificates; let i = index"
-        class="dot"
-        [ngClass]="{ active: selectedIndex === i }"
-        (click)="selectImage(i)"
-      ></span>
+<section class="certificates-section section-padding">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="section-title">Certificações</h2>
+      <p class="section-subtitle">
+        Alguns dos cursos e certificações que obtive ao longo da minha carreira
+      </p>
     </div>
 
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" (click)="previus()">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </a>
+    <!-- Certificates Grid -->
+    <div *ngIf="listCertificates && listCertificates.length > 0" class="certificates-container">
 
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"(click)="next()" >
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </a>
+      <!-- Desktop Grid View -->
+      <div class="certificates-grid">
+        <div
+          *ngFor="let certificate of listCertificates; let i = index"
+          class="certificate-card"
+          (click)="openCertificate(certificate)">
 
+          <div class="certificate-image-container">
+            <img
+              [src]="certificate.image"
+              [alt]="certificate.name"
+              class="certificate-image"
+              loading="lazy" />
+            <div class="certificate-overlay">
+              <div class="overlay-content">
+                <i class="fas fa-search-plus"></i>
+                <span>Ver Certificado</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="certificate-content">
+            <h3 class="certificate-title">{{ certificate.name }}</h3>
+            <p class="certificate-company">
+              <i class="fas fa-building"></i>
+              {{ certificate.company }}
+            </p>
+            <div class="certificate-badge">
+              <i class="fas fa-certificate"></i>
+              Certificado
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Carousel -->
+      <div class="mobile-carousel">
+        <div class="carousel-container">
+          <div class="carousel-track" [style.transform]="'translateX(' + (-selectedIndex * 100) + '%)'">
+            <div
+              *ngFor="let certificate of listCertificates; let i = index"
+              class="carousel-slide">
+
+              <div class="mobile-certificate-card">
+                <div class="mobile-image-container">
+                  <img [src]="certificate.image" [alt]="certificate.name" />
+                </div>
+                <div class="mobile-content">
+                  <h3>{{ certificate.name }}</h3>
+                  <p>{{ certificate.company }}</p>
+                  <button class="view-certificate-btn" (click)="openCertificate(certificate)">
+                    <i class="fas fa-external-link-alt"></i>
+                    Ver Certificado
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button
+            class="carousel-control prev"
+            (click)="previus()"
+            [disabled]="selectedIndex <= 0">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <button
+            class="carousel-control next"
+            (click)="next()"
+            [disabled]="selectedIndex >= listCertificates.length - 1">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <!-- Carousel Dots -->
+          <div class="carousel-dots">
+            <button
+              *ngFor="let certificate of listCertificates; let i = index"
+              class="dot"
+              [class.active]="selectedIndex === i"
+              (click)="selectImage(i)">
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certificate Count -->
+      <div class="certificates-stats">
+        <div class="stat-item">
+          <i class="fas fa-trophy"></i>
+          <span class="stat-number">{{ listCertificates.length }}</span>
+          <span class="stat-label">Certificações</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="!listCertificates || listCertificates.length === 0" class="empty-state">
+      <i class="fas fa-certificate"></i>
+      <h3>Nenhum certificado encontrado</h3>
+      <p>Os certificados serão exibidos aqui em breve.</p>
+    </div>
   </div>
-</div>
+</section>
 
 

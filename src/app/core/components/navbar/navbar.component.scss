@@ -1,44 +1,419 @@
-li {
-  cursor: pointer;
+// Reset CSS conflitante removido
+
+// Navbar Moderna
+.navbar-modern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--background-card);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 20px var(--shadow-color);
+
+  &.scrolled {
+    box-shadow: 0 4px 30px var(--shadow-hover);
+    border-bottom-color: var(--border-light);
+  }
 }
 
-
-nav {
-  color: white;
-  position: absolute;
-  background-color: transparent;
-  width: 100%;
-  height: 80px;
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  height: 80px;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    height: 70px;
+  }
 }
 
-
-
-.navbar-brand span {
-  color: white;
-}
-
+// Brand/Logo
 .navbar-brand {
-  color: #DA3239;
-}
-
-.nav-link{
-  font-weight: 500;
-  color: white;
-}
-
-.btn-cv {
-  color: white;
-  background-color: #DA3239;
-  border-radius: 5px;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
   text-decoration: none;
-  margin: auto;
-  padding: 10px;
-  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--primary-color);
+    transform: scale(1.05);
+  }
+
+  .brand-bracket {
+    color: var(--primary-color);
+    font-size: 32px;
+    font-weight: 900;
+  }
+
+  .brand-name {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'JetBrains Mono', monospace;
+  }
 }
 
-.btn-cv:hover {
-  padding: 10px 18px;
+// Desktop Menu
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  height: 100%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.nav-item {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: auto;
+}
+
+.nav-link {
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 28px 16px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--primary-color);
+
+    &::after {
+      width: calc(100% - 32px);
+    }
+  }
+}
+
+// Theme Toggle
+.theme-toggle {
+  background: var(--background-tertiary);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    background: var(--background-secondary);
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  .theme-icon {
+    width: 22px;
+    height: 22px;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+  }
+
+  &.mobile {
+    padding: 16px 20px;
+    gap: 12px;
+    width: 100%;
+    justify-content: flex-start;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-radius: 16px;
+    background: var(--background-secondary);
+
+    .theme-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+// Download CV Button
+.btn-cv {
+  background: var(--gradient-primary);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+    color: white;
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  .cv-icon {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .cv-icon {
+    transform: rotate(10deg);
+  }
+
+  &.mobile {
+    justify-content: center;
+    padding: 16px 24px;
+    margin-top: 16px;
+    border-radius: 16px;
+    font-size: 16px;
+  }
+}
+
+// Mobile Menu Toggle
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: var(--background-tertiary);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 12px;
+  gap: 4px;
+  transition: all 0.3s ease;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+
+  &:hover {
+    background: var(--background-secondary);
+    border-color: var(--primary-color);
+  }
+
+  .hamburger-line {
+    width: 24px;
+    height: 3px;
+    background: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  &.open {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+
+    .hamburger-line {
+      background: white;
+    }
+
+    .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger-line:nth-child(2) {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+  }
+}
+
+// Mobile Menu
+.mobile-menu {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: var(--background-card);
+  border-bottom: 1px solid var(--border-color);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(-20px);
+  box-shadow: 0 10px 40px var(--shadow-color);
+
+  &.open {
+    max-height: calc(100vh - 80px);
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+}
+
+.mobile-menu-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobile-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav-item {
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--background-tertiary);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--background-secondary);
+    border-color: var(--primary-color);
+    transform: translateX(4px);
+  }
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 18px 20px;
+  color: var(--text-primary);
+  font-weight: 600;
   font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    color: var(--primary-color);
+  }
+
+  &:active {
+    color: var(--primary-color);
+  }
+}
+
+.mobile-menu-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 2px solid var(--border-color);
+}
+
+// Animações aprimoradas
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-item {
+  animation: fadeInUp 0.4s ease-out;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .navbar-container {
+    padding: 0 16px;
+    height: 70px;
+  }
+
+  .navbar-brand {
+    font-size: 24px;
+
+    .brand-bracket {
+      font-size: 28px;
+    }
+  }
+
+  .mobile-menu {
+    top: 70px;
+  }
+
+  .mobile-menu-content {
+    padding: 20px;
+  }
+
+  .mobile-nav-link {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
 }

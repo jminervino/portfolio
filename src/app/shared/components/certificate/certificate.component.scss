@@ -82,4 +82,480 @@ p.company-active {
   color: #ffff;
 }
 
+// Certificates Section
+.certificates-section {
+  background: var(--background-primary);
+  min-height: 100vh;
+  position: relative;
+}
+
+// Section Header
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--gradient-primary);
+      border-radius: 2px;
+    }
+  }
+
+  .section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+}
+
+// Desktop Grid
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+  margin-bottom: 60px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.certificate-card {
+  background: var(--background-card);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.4s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px var(--shadow-hover);
+
+    .certificate-image {
+      transform: scale(1.05);
+    }
+
+    .certificate-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.certificate-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: var(--background-tertiary);
+
+  .certificate-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .certificate-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      text-align: center;
+
+      i {
+        font-size: 2rem;
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.certificate-content {
+  padding: 24px;
+
+  .certificate-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .certificate-company {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 16px;
+
+    i {
+      color: var(--primary-color);
+    }
+  }
+
+  .certificate-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    i {
+      font-size: 10px;
+    }
+  }
+}
+
+// Mobile Carousel
+.mobile-carousel {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    margin-bottom: 40px;
+  }
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: var(--background-card);
+  box-shadow: 0 8px 32px var(--shadow-color);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+  min-width: 100%;
+}
+
+.mobile-certificate-card {
+  padding: 24px;
+  text-align: center;
+
+  .mobile-image-container {
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--background-tertiary);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .mobile-content {
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .view-certificate-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient-primary);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      }
+    }
+  }
+}
+
+// Carousel Controls
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background: var(--background-card);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+
+  &:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  &.prev {
+    left: 16px;
+  }
+
+  &.next {
+    right: 16px;
+  }
+
+  i {
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+
+  &:hover:not(:disabled) i {
+    color: white;
+  }
+}
+
+// Carousel Dots
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--background-tertiary);
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.active {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+      transform: scale(1.2);
+    }
+
+    &:hover:not(.active) {
+      background: var(--background-secondary);
+    }
+  }
+}
+
+// Statistics
+.certificates-stats {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 32px;
+    background: var(--background-card);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px var(--shadow-color);
+    border: 1px solid var(--border-color);
+
+    i {
+      font-size: 2rem;
+      color: var(--primary-color);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+// Empty State
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+
+  i {
+    font-size: 4rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    opacity: 0.5;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+  .certificates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 40px;
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+    }
+  }
+
+  .certificates-stats {
+    .stat-item {
+      padding: 20px 24px;
+
+      .stat-number {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    .section-title {
+      font-size: 1.75rem;
+    }
+  }
+
+  .mobile-certificate-card {
+    padding: 20px;
+
+    .mobile-image-container {
+      height: 160px;
+    }
+
+    .mobile-content {
+      h3 {
+        font-size: 1.125rem;
+      }
+
+      .view-certificate-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .carousel-control {
+    width: 36px;
+    height: 36px;
+
+    &.prev {
+      left: 12px;
+    }
+
+    &.next {
+      right: 12px;
+    }
+
+    i {
+      font-size: 12px;
+    }
+  }
+
+  .certificates-stats {
+    .stat-item {
+      padding: 16px 20px;
+
+      i {
+        font-size: 1.5rem;
+      }
+
+      .stat-number {
+        font-size: 1.75rem;
+      }
+
+      .stat-label {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
 

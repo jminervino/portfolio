@@ -7,33 +7,143 @@
 <div id="stars2"></div>
 <div id="stars3"></div> -->
 
-<main >
-  <div class="about">
-    <h2>Olá! meu nome é</h2>
-    <h1 class="dev-name">João Victor.</h1>
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content animate-fade-in-left">
+      <div class="hero-greeting">
+        <span class="greeting-text">Olá! meu nome é</span>
+      </div>
 
-    <h2 class="function"> < Desenvolvedor Mobile ></h2>
+      <h1 class="hero-name">
+        <span class="name-highlight">João Victor</span>
+        <span class="name-period">.</span>
+      </h1>
 
-    <div>
-      <p class="text-animation"></p>
-    </div>
+      <h2 class="hero-title">
+        <span class="title-brackets">&lt;</span>
+        <span class="title-text">Desenvolvedor Full Stack</span>
+        <span class="title-brackets">&gt;</span>
+      </h2>
 
-    <p>
-      Apaixonado por tecnologia, apto e disposto a <br/>
-      desbravar tudo de novo que vier!
-    </p>
-    <div class="buttons">
-        <button *ngFor="let button of buttonsHome" (click)="redirectToLink(button)">
-          <img src="{{ button.img }}" />
+      <div class="typing-animation">
+        <p class="typing-text"></p>
+      </div>
+
+      <p class="hero-description">
+        Apaixonado por tecnologia, sempre em busca de novos desafios e
+        pronto para transformar ideias em soluções inovadoras.
+      </p>
+
+      <div class="hero-buttons">
+        <button
+          *ngFor="let button of buttonsHome"
+          (click)="redirectToLink(button)"
+          class="hero-btn"
+          [class]="'btn-' + button.type">
+          <img [src]="button.img" [alt]="button.text" class="btn-icon" />
           {{ button.text }}
         </button>
+      </div>
+
+      <!-- Social Links -->
+      <div class="social-links">
+        <a
+          *ngFor="let social of socialLinks"
+          [href]="social.url"
+          target="_blank"
+          [attr.aria-label]="social.name"
+          class="social-link">
+          <i [class]="social.icon"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image animate-fade-in-right">
+      <div class="image-container">
+        <div class="floating-elements">
+          <div class="floating-element element-1"></div>
+          <div class="floating-element element-2"></div>
+          <div class="floating-element element-3"></div>
+        </div>
+        <img
+          src="assets/img/AirBrush_20220905114412-removebg.png"
+          alt="João Victor - Desenvolvedor Full Stack"
+          class="profile-image" />
+      </div>
     </div>
   </div>
-  <div class="bg-img">
-    <img src="assets/img/AirBrush_20220905114412-removebg.png" alt="" />
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+    <span class="scroll-text">Role para baixo</span>
   </div>
-</main>
-<!-- <app-myhistory></app-myhistory> -->
-<app-skills></app-skills>
-<app-projects></app-projects>
-<app-certificate></app-certificate>
+</section>
+
+<!-- About Section -->
+<section id="sobre" class="about-section section-padding">
+  <div class="container-custom">
+    <div class="section-header">
+      <h2 class="section-title">Sobre Mim</h2>
+      <p class="section-subtitle">Conheça um pouco da minha jornada</p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Sou um desenvolvedor full stack apaixonado por criar experiências digitais
+          excepcionais. Com experiência tanto no frontend quanto no backend,
+          estou sempre buscando as melhores práticas e tecnologias mais recentes.
+        </p>
+        <p>
+          Acredito que a tecnologia deve ser uma ferramenta para resolver problemas
+          reais e melhorar a vida das pessoas. Por isso, dedico-me a criar soluções
+          que sejam não apenas funcionais, mas também bonitas e intuitivas.
+        </p>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-item">
+          <h3 class="stat-number">3+</h3>
+          <p class="stat-label">Anos de Experiência</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">20+</h3>
+          <p class="stat-label">Projetos Concluídos</p>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number">100%</h3>
+          <p class="stat-label">Dedicação</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="habilidades" class="skills-section">
+  <app-skills></app-skills>
+</section>
+
+<!-- Projects Section -->
+<section id="projetos" class="projects-section">
+  <app-projects></app-projects>
+</section>
+
+<!-- Professional Projects Section -->
+<section class="professional-projects-section">
+  <app-professional-projects-example></app-professional-projects-example>
+</section>
+
+<!-- Certificates Section -->
+<section class="certificates-section">
+  <app-certificate></app-certificate>
+</section>
+
+<!-- Contact Section -->
+<section id="contato" class="contact-section">
+  <app-contact></app-contact>
+</section>

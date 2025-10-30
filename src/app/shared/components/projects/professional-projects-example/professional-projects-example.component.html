@@ -1,0 +1,31 @@
+<div class="professional-projects-section">
+  <!-- Header da seção -->
+  <div class="section-header">
+    <h2 class="section-title">Projetos Profissionais</h2>
+    <p class="section-subtitle">
+      Experiências em projetos corporativos com foco em soluções robustas e escaláveis
+    </p>
+  </div>
+
+  <!-- Grid de projetos profissionais -->
+  <div class="professional-projects-grid">
+    <app-card-professional-project
+      *ngFor="let projeto of projetosProfissionais; let i = index"
+      [projetoResumo]="projeto"
+      [style.animation-delay.s]="i * 0.1">
+    </app-card-professional-project>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="projects-cta">
+    <h3>Interessado em projetos similares?</h3>
+    <p>
+      Tenho experiência em desenvolvimento de soluções corporativas complexas,
+      desde sistemas financeiros até plataformas educacionais escaláveis.
+    </p>
+    <button class="cta-button">
+      <i class="fas fa-envelope"></i>
+      Vamos conversar
+    </button>
+  </div>
+</div>

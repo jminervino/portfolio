@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Projects } from '../models/projects';
+import { Project } from '../models/projects';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProjectsService {
 
-  private project: Projects[] = [
+  private project: Project[] = [
     {
       image:
         'assets/img/helpr.jpeg',

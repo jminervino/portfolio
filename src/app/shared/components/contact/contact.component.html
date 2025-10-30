@@ -1,37 +1,105 @@
-<div class="all">
-  <div class="container">
-    <h1>Contato</h1>
-    <div class="d-flex justify-content-between">
-      <div class="d-flex container-elements align-items-center">
-        <img class="icon" src="assets/img/icon-whatsapp.png" alt="" />
-        <div>
-          <h3>Whatsapp</h3>
-          <span>(81) 98679-7955</span>
+<section class="contact-section section-padding">
+  <div class="container-custom">
+    <div class="section-header">
+      <h2 class="section-title">Entre em Contato</h2>
+      <p class="section-subtitle">
+        Vamos conversar sobre seu próximo projeto!
+      </p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Vamos trabalhar juntos</h3>
+        <p>
+          Estou sempre aberto a discutir oportunidades de trabalho ou projetos interessantes.
+          Entre em contato comigo através dos canais abaixo.
+        </p>
+
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="method-info">
+              <h4>Email</h4>
+              <a href="mailto:jvminervinoaraujo@gmail.com">jvminervinoaraujo@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="method-info">
+              <h4>WhatsApp</h4>
+              <a href="https://wa.me/5581986797955" target="_blank">(81) 98679-7955</a>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="method-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="method-info">
+              <h4>LinkedIn</h4>
+              <a href="https://www.linkedin.com/in/joão-victor-minervino-de-araújo-67b327222/" target="_blank">linkedin.com/in/joão-victor-minervino-de-araújo-67b327222</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="d-flex container-elements align-items-center">
-        <img class="icon" src="assets/img/icon-email.png" alt="" />
-        <div>
-          <h3>Mande um E-Mail</h3>
-          <a>joaovictor_minervino@hotmail.com</a>
-        </div>
-      </div>
-      <div class="d-flex container-elements align-items-center">
-        <img class="icon" src="assets/img/icon-localization.png" alt="" />
-        <div>
-          <h3>Localização</h3>
-          <span>Recife - PE</span>
-        </div>
+
+      <div class="contact-form-container">
+        <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+          <div class="form-group">
+            <label for="name">Nome *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              [(ngModel)]="formData.name"
+              required
+              class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="formData.email"
+              required
+              class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Assunto</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              [(ngModel)]="formData.subject"
+              class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Mensagem *</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              [(ngModel)]="formData.message"
+              required
+              class="form-control"
+              placeholder="Conte-me sobre seu projeto..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary submit-btn" [disabled]="!contactForm.form.valid">
+            <i class="fas fa-paper-plane"></i>
+            Enviar Mensagem
+          </button>
+        </form>
       </div>
     </div>
-    <div class="d-flex flex-column">
-      <label for="">Nome Completo</label>
-      <input class="input" type="text" />
-      <label for="">Email</label>
-      <input class="input" type="email" />
-      <label for="">Sua mensagem</label>
-      <input class="input msg" type="text" />
-    </div>
-    <button class="contactBtn">Enviar Mensagem</button>
   </div>
-</div>
+</section>

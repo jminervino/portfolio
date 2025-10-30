@@ -1,0 +1,64 @@
+<div class="project-card">
+  <!-- Project Image with Overlay -->
+  <div class="project-image-container">
+    <img class="project-image" [src]="project.image" [alt]="project.name" />
+    <div class="image-overlay">
+      <div class="overlay-content">
+        <a [href]="project.repository" target="_blank" class="repo-link" aria-label="Ver no GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <button class="demo-link" aria-label="Ver demonstração">
+          <i class="fas fa-external-link-alt"></i>
+        </button>
+      </div>
+    </div>
+    <div class="project-status">
+      <span class="status-badge">Concluído</span>
+    </div>
+  </div>
+
+  <!-- Project Content -->
+  <div class="project-content">
+    <!-- Project Header -->
+    <div class="project-header">
+      <h3 class="project-title">{{ project.name }}</h3>
+      <a [href]="project.repository" target="_blank" class="github-link" aria-label="Ver no GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+
+    <!-- Project Description -->
+    <p class="project-description">{{ project.description }}</p>
+
+    <!-- Technologies Used -->
+    <div class="tech-stack">
+      <h4 class="tech-title">
+        <i class="fas fa-cogs"></i>
+        Tecnologias
+      </h4>
+      <div class="tech-tags">
+        <button
+          *ngFor="let tech of project.technologies"
+          class="tech-tag"
+          [style.border-color]="tech.color"
+          (click)="redirectToDocumentation(tech)"
+          [title]="'Documentação do ' + tech.name">
+          <img [src]="tech.icon" [alt]="tech.name" class="tech-icon" />
+          <span>{{ tech.name }}</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Project Actions -->
+    <div class="project-actions">
+      <a [href]="project.repository" target="_blank" class="action-btn primary">
+        <i class="fab fa-github"></i>
+        Código
+      </a>
+      <button class="action-btn secondary">
+        <i class="fas fa-eye"></i>
+        Demo
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,44 +1,36 @@
-<main>
-  <div class="container">
-    <h1 class="area-name">Projetos</h1>
+<section class="projects-section section-padding">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="section-title">Meus Projetos</h2>
+      <p class="section-subtitle">
+        Alguns dos projetos que desenvolvi ao longo da minha carreira
+      </p>
+    </div>
 
-    <div class="row">
-      <div class="col" *ngFor="let project of listProjects">
+    <!-- Filter Buttons (opcional - pode implementar depois) -->
+    <div class="project-filters">
+      <button class="filter-btn active">Todos</button>
+              <button class="filter-btn">Frontend</button>
+      <button class="filter-btn">Web</button>
+      <button class="filter-btn">Full Stack</button>
+    </div>
 
-        <div class="card-project">
-
-          <div class="container-image">
-            <img class="img-project" src="{{ project.image }}" />
-            <a [href]="project.repository" target="_blank" class="git-link" >
-              <img class="git-image" src="../../../../assets/img/icons8-github-120.png" />
-            </a>
-          </div>
-
-          <div class="card-informations">
-            <div class="column-name">
-              <h1>{{ project.name }}</h1>
-              <a href="{{ project.repository }}"
-                ><img src="../../../../assets/img/icons8-github-64.png" alt=""
-              /></a>
-            </div>
-            <div class="buttons d-flex">
-              <button
-                *ngFor="let tec of project.technologies"
-                class="d-flex"
-                id="{{ tec.color }}"
-                (click)="redirectToDocumentation(tec)"
-              >
-                <img src="{{ tec.icon }}" />
-                {{ tec.name }}
-              </button>
-            </div>
-            <hr />
-            <div class="description">
-              <p>{{ project.description }}</p>
-            </div>
-          </div>
-        </div>
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+      <div class="project-item" *ngFor="let project of listProjects; let i = index">
+        <app-card-project [project]="project"></app-card-project>
       </div>
     </div>
+
+    <!-- Call to Action -->
+    <div class="projects-cta">
+      <h3>Interessado em trabalhar comigo?</h3>
+      <p>Vamos conversar sobre como posso ajudar no seu próximo projeto</p>
+      <button class="cta-button" (click)="scrollToContact()">
+        <i class="fas fa-paper-plane"></i>
+        Entre em Contato
+      </button>
+    </div>
   </div>
-</main>
+</section>

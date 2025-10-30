@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Projects, Technologies } from 'src/app/core/models/projects';
+import { Project, Technologies } from 'src/app/core/models/projects';
 import { ProjectsService } from 'src/app/core/services/projects.service';
 
 @Component({
@@ -8,12 +8,7 @@ import { ProjectsService } from 'src/app/core/services/projects.service';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent implements OnInit {
-  listProjects: Projects[] = [];
-
-  redirectToDocumentation(tec: Technologies){
-    if(tec.documentation != null)
-    window.open(tec.documentation, "_blank");
-  }
+  listProjects: Project[] = [];
 
   constructor(
     private projectsService: ProjectsService,
@@ -21,5 +16,12 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.listProjects = this.projectsService.getProjects();
+  }
+
+  scrollToContact(): void {
+    const element = document.querySelector('#contato');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

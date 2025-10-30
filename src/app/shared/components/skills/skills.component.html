@@ -1,23 +1,112 @@
-<div class="all">
-  <h1 style="color: #ffff">Skills</h1>
-  <div class="container ">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner d-flex">
-        <div *ngFor="let skill of skills" class="m-auto">
-          <div class="row">
-            <div class="d-flex flex-column align-items-center block-skills carousel-item active col-lg-4">
-              <img src="{{ skill.icon }}" alt="" />
-              <h3>{{ skill.name }}</h3>
-            </div>
+<section class="skills-section section-padding">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="section-header">
+      <h2 class="section-title">Habilidades & Experiência</h2>
+      <p class="section-subtitle">
+        Tecnologias que domino e minha jornada profissional
+      </p>
+    </div>
+
+    <div class="skills-content">
+      <!-- Skills Grid -->
+      <div class="skills-grid">
+        <h3 class="subsection-title">
+          <i class="fas fa-code"></i>
+          Tecnologias
+        </h3>
+        <div class="skills-list">
+          <app-card-skills
+            *ngFor="let skill of skills"
+            [name]="skill.name"
+            [icon]="skill.icon">
+          </app-card-skills>
+        </div>
+      </div>
+
+      <!-- Experience Timeline -->
+      <div class="experience-section">
+        <h3 class="subsection-title">
+          <i class="fas fa-briefcase"></i>
+          Experiência Profissional
+        </h3>
+        <div class="timeline-container">
+          <div class="timeline">
+            <app-card-experience
+              [company]="'Devzapp'"
+              [date]="'Fev 2024 - Atual'"
+              [typeIcon]="'svg'"
+              [office]="'Frontend Developer'"
+              [icon]="devzappIcon"
+              [lineStyle]="{ 'background-color': '#1EA659' }"
+              [description]="'Automatizando WhatsApp com Angular e Java Spring Boot, criando funis, campanhas, e mensagens automatizadas.'">
+            </app-card-experience>
+
+            <app-card-experience
+              [company]="'FY.tec'"
+              [date]="'Dez 2022 - Fev 2024'"
+              [typeIcon]="'img'"
+              [office]="'Desenvolvedor Full Stack - Especialista em Flutter'"
+              [icon]="'assets/img/fytec.jpg'"
+              [lineStyle]="{ 'background-color': '#3B82F6' }"
+              [description]="'Desenvolvendo interfaces dinâmicas com Vue e Vuetify, e soluções completas com PHP e Laravel. Especializando em desenvolvimento full stack com foco em aplicações web modernas.'">
+            </app-card-experience>
+
+            <app-card-experience
+              [company]="'Sunize'"
+              [date]="'Ago 2022 - Dez 2023'"
+              [typeIcon]="'svg'"
+              [office]="'Desenvolvedor Full Stack'"
+              [icon]="sunizeIcon"
+              [lineStyle]="{ 'background-color': '#FF564E' }"
+              [description]="'Desenvolvendo e aprimorando a plataforma de educação digital com TypeScript, Node.js, React e Docker.'">
+            </app-card-experience>
           </div>
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </a>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="skills-stats">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+        <div class="stat-info">
+          <h4 class="stat-number">15+</h4>
+          <p class="stat-label">Tecnologias</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="stat-info">
+          <h4 class="stat-number">3+</h4>
+          <p class="stat-label">Anos de Experiência</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-layer-group"></i>
+        </div>
+        <div class="stat-info">
+          <h4 class="stat-number">Full Stack</h4>
+          <p class="stat-label">Especialidade</p>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-rocket"></i>
+        </div>
+        <div class="stat-info">
+          <h4 class="stat-number">20+</h4>
+          <p class="stat-label">Projetos</p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>

@@ -1,0 +1,496 @@
+.card {
+  height: 90px;
+}
+
+.skill-card {
+  background: var(--background-card);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px var(--shadow-hover);
+
+    &::before {
+      transform: scaleX(1);
+    }
+
+    .skill-icon img {
+      transform: scale(1.1);
+    }
+
+    .skill-overlay {
+      opacity: 1;
+    }
+  }
+}
+
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: var(--background-tertiary);
+  padding: 12px;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+  }
+}
+
+.skill-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.4;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
+}
+
+.skill-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, var(--background-card), transparent);
+  padding: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-level {
+  width: 100%;
+  height: 4px;
+  background: var(--border-light);
+  border-radius: 2px;
+  overflow: hidden;
+
+  .level-indicator {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+    width: 85%; // Você pode fazer isso dinâmico baseado no nível da skill
+    animation: levelProgress 1s ease-out;
+  }
+}
+
+@keyframes levelProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 85%;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .skill-card {
+    padding: 20px 16px;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+// Tech Card - Versão Estável
+.tech-card {
+  height: 180px;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+  background: none;
+}
+
+.tech-card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.tech-card:hover .tech-card-container {
+  transform: rotateY(180deg);
+}
+
+// Card Faces
+.tech-card-front,
+.tech-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tech-card-back {
+  transform: rotateY(180deg);
+}
+
+// Front Card Design
+.tech-card-front {
+  background: var(--background-card);
+  border: 2px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px var(--shadow-color);
+
+  // Shimmer effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(59, 130, 246, 0.1),
+      transparent
+    );
+    transition: left 0.6s ease;
+  }
+
+  &:hover::before {
+    left: 100%;
+  }
+
+  .tech-icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 16px;
+    background: var(--background-tertiary);
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+
+    .tech-icon {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .icon-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      opacity: 0;
+      filter: blur(20px);
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  .tech-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    margin: 0;
+    transition: all 0.3s ease;
+  }
+
+  .tech-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transition: width 0.4s ease;
+  }
+
+  // Hover effects suaves
+  &:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 30px var(--shadow-hover);
+
+    .tech-icon-container {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+      transform: scale(1.05);
+
+      .tech-icon {
+        filter: brightness(0) invert(1);
+      }
+
+      .icon-glow {
+        opacity: 0.5;
+      }
+    }
+
+    .tech-name {
+      color: var(--primary-color);
+    }
+
+    .tech-border {
+      width: 100%;
+    }
+  }
+}
+
+// Back Card Design
+.tech-card-back {
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 8px 32px var(--shadow-hover);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+  }
+
+  .back-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+    color: white;
+
+    .tech-logo {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+
+      img {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        filter: brightness(0) invert(1);
+      }
+    }
+
+    .back-title {
+      font-size: 14px;
+      font-weight: 800;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .skill-level {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+
+      .level-text {
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        opacity: 0.9;
+      }
+
+      .level-bars {
+        display: flex;
+        gap: 2px;
+
+        .level-bar {
+          width: 8px;
+          height: 4px;
+          background: rgba(255, 255, 255, 0.3);
+          border-radius: 2px;
+          transition: all 0.3s ease;
+
+          &.active {
+            background: white;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+    }
+
+    .experience-badge {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 8px;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+
+      i {
+        font-size: 8px;
+      }
+    }
+  }
+}
+
+// Mobile Responsive
+@media (max-width: 768px) {
+  .tech-card {
+    height: 160px;
+  }
+
+  .tech-card-front {
+    padding: 20px;
+    gap: 12px;
+
+    .tech-icon-container {
+      width: 60px;
+      height: 60px;
+
+      .tech-icon {
+        width: 35px;
+        height: 35px;
+      }
+
+      .icon-glow {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .tech-name {
+      font-size: 14px;
+    }
+  }
+
+  .tech-card-back {
+    padding: 16px;
+
+    .back-content {
+      gap: 10px;
+
+      .tech-logo {
+        width: 44px;
+        height: 44px;
+
+        img {
+          width: 26px;
+          height: 26px;
+        }
+      }
+
+      .back-title {
+        font-size: 13px;
+      }
+
+      .level-bars .level-bar {
+        width: 6px;
+        height: 3px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-card {
+    height: 140px;
+  }
+
+  .tech-card:hover .tech-card-container {
+    transform: none; // Disable flip on very small screens
+  }
+
+  .tech-card-front {
+    padding: 16px;
+    gap: 10px;
+
+    .tech-icon-container {
+      width: 50px;
+      height: 50px;
+
+      .tech-icon {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .tech-name {
+      font-size: 13px;
+    }
+
+    // Manter hover effect mesmo sem flip
+    &:hover {
+      transform: none;
+      box-shadow: 0 6px 20px var(--shadow-hover);
+    }
+  }
+}

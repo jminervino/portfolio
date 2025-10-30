@@ -6,7 +6,8 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 // html, body { height: 100%; }
 
 // body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
@@ -26,95 +27,263 @@
 // $shadows-medium: multiple-box-shadow(200);
 // $shadows-big: multiple-box-shadow(100);
 
+// CSS Custom Properties para Temas
+:root {
+  // Tema Light
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary-color: #64748b;
+  --accent-color: #f59e0b;
+  --accent-hover: #d97706;
 
-body {
-  // height: 100%;
-  background-color: #1D1D1D;
-  font-family: "Oswald", sans-serif;
+  --background-primary: #ffffff;
+  --background-secondary: #f8fafc;
+  --background-tertiary: #f1f5f9;
+  --background-card: #ffffff;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #ffffff;
+
+  --border-color: #e2e8f0;
+  --border-light: #f1f5f9;
+  --shadow-color: rgba(15, 23, 42, 0.1);
+  --shadow-hover: rgba(15, 23, 42, 0.15);
+
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
-// #stars {
-//   width: 1px;
-//   height: 1px;
-//   background: transparent;
-//   box-shadow: $shadows-small;
-//   animation: animStar 50s linear infinite;
+[data-theme="dark"] {
+  // Tema Dark
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary-color: #6b7280;
+  --accent-color: #fbbf24;
+  --accent-hover: #f59e0b;
 
-//   &:after {
-//     content: " ";
-//     position: absolute;
-//     top: 2000px;
-//     width: 1px;
-//     height: 1px;
-//     background: transparent;
-//     box-shadow: $shadows-small;
-//   }
-// }
+  --background-primary: #0f172a;
+  --background-secondary: #1e293b;
+  --background-tertiary: #334155;
+  --background-card: #1e293b;
 
-// #stars2 {
-//   width: 2px;
-//   height: 2px;
-//   background: transparent;
-//   box-shadow: $shadows-medium;
-//   animation: animStar 100s linear infinite;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --text-inverse: #0f172a;
 
-//   &:after {
-//     content: " ";
-//     position: absolute;
-//     top: 2000px;
-//     width: 2px;
-//     height: 2px;
-//     background: transparent;
-//     box-shadow: $shadows-medium;
-//   }
-// }
+  --border-color: #334155;
+  --border-light: #475569;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-hover: rgba(0, 0, 0, 0.4);
 
-// #stars3 {
-//   width: 3px;
-//   height: 3px;
-//   background: transparent;
-//   box-shadow: $shadows-big;
-//   animation: animStar 150s linear infinite;
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
 
-//   &:after {
-//     content: " ";
-//     position: absolute;
-//     top: 2000px;
-//     width: 3px;
-//     height: 3px;
-//     background: transparent;
-//     box-shadow: $shadows-big;
-//   }
-// }
+// Reset e configurações globais
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-// #title {
-//   position: absolute;
-//   top: 50%;
-//   left: 0;
-//   right: 0;
+html {
+  scroll-behavior: smooth;
+}
 
-//   color: #FFF;
-//   text-align: center;
-//   font-family: 'lato', sans-serif;
-//   font-weight: 300;
-//   font-size: 50px;
-//   letter-spacing: 10px;
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
 
-//   margin-top: -60px;
-//   padding-left: 10px;
+// Tipografia melhorada
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
 
-//   span {
-//     background: -webkit-linear-gradient(white, #38495a);
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-//   }
-// }
+h1 { font-size: 3.5rem; font-weight: 800; }
+h2 { font-size: 2.5rem; font-weight: 700; }
+h3 { font-size: 2rem; font-weight: 600; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
 
-// @keyframes animStar {
-//   from {
-//     transform: translateY(0px);
-//   }
-//   to {
-//     transform: translateY(-2000px);
-//   }
-// }
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+// Links e botões
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--primary-hover);
+  }
+}
+
+// Botões personalizados
+.btn-primary {
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-color);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--shadow-hover);
+  }
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 10px 22px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+  }
+}
+
+// Cards e containers
+.card {
+  background: var(--background-card);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px var(--shadow-hover);
+  }
+}
+
+// Scrollbar personalizada
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+
+  &:hover {
+    background: var(--text-muted);
+  }
+}
+
+// Animações globais
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+// Utilitários responsivos
+.container-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-padding {
+  padding: 80px 0;
+}
+
+// Media queries para responsividade
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+
+  .section-padding {
+    padding: 60px 0;
+  }
+
+  .container-custom {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+
+  .section-padding {
+    padding: 40px 0;
+  }
+}

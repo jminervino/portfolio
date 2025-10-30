@@ -1,0 +1,37 @@
+<div class="tech-card">
+  <div class="tech-card-container">
+    <!-- Front of card -->
+    <div class="tech-card-front">
+      <div class="tech-icon-container">
+        <img [src]="icon" [alt]="name" class="tech-icon" />
+        <div class="icon-glow"></div>
+      </div>
+      <h4 class="tech-name">{{ name }}</h4>
+      <div class="tech-border"></div>
+    </div>
+
+    <!-- Back of card (hover effect) -->
+    <div class="tech-card-back">
+      <div class="back-content">
+        <div class="tech-logo">
+          <img [src]="icon" [alt]="name" />
+        </div>
+        <h4 class="back-title">{{ name }}</h4>
+        <div class="skill-level">
+          <span class="level-text">Avançado</span>
+          <div class="level-bars">
+            <div class="level-bar active"></div>
+            <div class="level-bar active"></div>
+            <div class="level-bar active"></div>
+            <div class="level-bar active"></div>
+            <div class="level-bar"></div>
+          </div>
+        </div>
+        <div class="experience-badge">
+          <i class="fas fa-star"></i>
+          <span>3+ anos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

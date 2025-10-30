@@ -1,0 +1,100 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="container-custom">
+      <div class="footer-main">
+        <!-- Brand Section -->
+        <div class="footer-brand">
+          <a href="#" class="footer-logo" (click)="scrollToTop()">
+            <span class="brand-bracket">{{ '{' }}</span>
+            <span class="brand-name">João</span>
+            <span class="brand-bracket">{{ '}' }}</span>
+          </a>
+          <p class="footer-description">
+            Desenvolvedor Full Stack apaixonado por criar soluções inovadoras e experiências digitais excepcionais.
+          </p>
+          <div class="footer-social">
+            <a
+              *ngFor="let social of socialLinks"
+              [href]="social.url"
+              target="_blank"
+              [attr.aria-label]="social.name"
+              class="social-link">
+              <i [class]="social.icon"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Section -->
+        <div class="footer-nav">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a (click)="scrollToSection('#home')">Início</a></li>
+            <li><a (click)="scrollToSection('#sobre')">Sobre</a></li>
+            <li><a (click)="scrollToSection('#habilidades')">Habilidades</a></li>
+            <li><a (click)="scrollToSection('#projetos')">Projetos</a></li>
+            <li><a (click)="scrollToSection('#contato')">Contato</a></li>
+          </ul>
+        </div>
+
+        <!-- Services Section -->
+        <div class="footer-services">
+          <h4>Serviços</h4>
+          <ul>
+            <li>Desenvolvimento Full Stack</li>
+            <li>Frontend (Angular/React)</li>
+            <li>Backend (Node.js/Spring Boot)</li>
+          </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-contact">
+          <h4>Contato</h4>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:jvminervinoaraujo@gmail.com">jvminervinoaraujo@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/5581986797955" target="_blank">(81) 98679-7955</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Recife, PE - Brasil</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          <p>&copy; {{ currentYear }} João Victor. Todos os direitos reservados.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Uso</a>
+        </div>
+        <div class="theme-toggle-footer">
+          <button
+            class="theme-toggle-btn"
+            (click)="themeService.toggleTheme()"
+            [attr.aria-label]="themeService.isDarkMode ? 'Mudar para tema claro' : 'Mudar para tema escuro'">
+            <i *ngIf="!themeService.isDarkMode" class="fas fa-sun"></i>
+            <i *ngIf="themeService.isDarkMode" class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button
+    class="back-to-top"
+    (click)="scrollToTop()"
+    [class.visible]="showBackToTop"
+    aria-label="Voltar ao topo">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+</footer>

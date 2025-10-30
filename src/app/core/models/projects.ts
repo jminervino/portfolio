@@ -1,4 +1,4 @@
-export interface Projects {
+export interface Project {
   image: string;
   name: string;
   technologies: Technologies[];

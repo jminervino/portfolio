@@ -1,0 +1,37 @@
+<div class="experience-card">
+  <!-- Company Icon -->
+  <div class="company-icon-container">
+    <div class="icon-wrapper">
+      <div *ngIf="typeIcon === 'svg'" class="company-icon svg-icon">
+        <div [innerHTML]="iconSanitizer"></div>
+      </div>
+      <div *ngIf="typeIcon === 'img'"
+           class="company-icon img-icon"
+           [style.background-image]="'url(' + icon + ')'">
+      </div>
+    </div>
+    <div class="timeline-connector"></div>
+  </div>
+
+  <!-- Experience Content -->
+  <div class="experience-content">
+    <div class="experience-header">
+      <h3 class="company-name">{{ company }}</h3>
+      <span class="experience-date">
+        <i class="fas fa-calendar-alt"></i>
+        {{ date }}
+      </span>
+    </div>
+
+    <div class="position-title">
+      <i class="fas fa-briefcase"></i>
+      {{ office }}
+    </div>
+
+    <p class="experience-description">{{ description }}</p>
+
+    <div class="experience-tags">
+      <span class="tag">Experiência Profissional</span>
+    </div>
+  </div>
+</div>

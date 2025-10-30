@@ -1,0 +1,77 @@
+<div class="professional-project-card">
+  <!-- Header com ícone e informações básicas -->
+  <div class="project-header">
+    <div class="project-icon">
+      <i class="fas fa-briefcase"></i>
+    </div>
+
+    <div class="project-info">
+      <h3 class="project-title">{{ projetoResumo.titulo }}</h3>
+
+      <div class="company-info">
+        <ng-container *ngIf="!getConsultingInfo().via; else consultingTemplate">
+          <div class="company-main">
+            <i class="fas fa-building"></i>
+            <span>{{ getConsultingInfo().empresa }}</span>
+          </div>
+        </ng-container>
+
+        <ng-template #consultingTemplate>
+          <div class="company-main">
+            <i class="fas fa-building"></i>
+            <span>{{ getConsultingInfo().empresa }}</span>
+          </div>
+          <div class="consulting-info">
+            <i class="fas fa-handshake"></i>
+            <span>via {{ getConsultingInfo().via }}</span>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+
+    <div class="project-period">
+      <i class="fas fa-calendar-alt"></i>
+      <span>{{ projetoResumo.periodo }}</span>
+    </div>
+  </div>
+
+  <!-- Stack de tecnologias -->
+  <div class="tech-stack">
+    <h4 class="stack-title">
+      <i class="fas fa-code"></i>
+      Stack Principal
+    </h4>
+    <div class="tech-tags">
+      <span
+        *ngFor="let tech of projetoResumo.stack"
+        class="tech-tag">
+        {{ tech }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Descrição do projeto -->
+  <div class="project-description">
+    <p>{{ projetoResumo.descricao }}</p>
+  </div>
+
+  <!-- Badge de projeto confidencial -->
+  <div class="project-badges">
+    <div class="confidential-badge">
+      <i class="fas fa-lock"></i>
+      <span>Projeto Profissional</span>
+    </div>
+
+    <div class="status-badge">
+      <i class="fas fa-check-circle"></i>
+      <span>Concluído</span>
+    </div>
+  </div>
+
+  <!-- Decoração visual -->
+  <div class="card-decoration">
+    <div class="decoration-dot"></div>
+    <div class="decoration-dot"></div>
+    <div class="decoration-dot"></div>
+  </div>
+</div>

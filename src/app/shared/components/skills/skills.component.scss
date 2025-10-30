@@ -1,132 +1,300 @@
+.skills-container {
+  background-color: #333;
+  padding: 20px;
+}
+
+.skills-container .title {
+  text-align: center;
+  margin: 20px 0 40px;
+  color: #ffff;
+  font-size: 28px;
+}
+
+.container {
+  display: flex;
+  gap: 60px;
+}
+
+mat-grid-list {
+  width: 100%;
+  margin: 0;
+}
+
+mat-grid-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+app-card-skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #242424;
+  padding: 16px;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  color: #828282;
+}
+
+app-card-skills img {
+  max-width: 50px;
+  margin-bottom: 8px;
+}
+
+app-card-skills h3 {
+  color: #fff;
+  margin-bottom: 0px;
+}
+
+// CSS antigo da timeline removido - usando apenas os novos estilos modernos
+
+.skills-section {
+  background: var(--background-primary);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+
+  .section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .section-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 80px;
+  align-items: stretch;
+
+  @media (max-width: 1024px) {
+    gap: 60px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: flex-start;
+  }
+}
+
+.subsection-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 32px;
+
+  i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+  }
+}
+
+// Skills Grid
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: none;
+
+  .skills-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    flex: 1;
+    padding: 0;
+    background: none;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+  }
+}
+
+// Experience Section
+.experience-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .timeline-container {
+    position: relative;
+    flex: 1;
+  }
+
+  .timeline {
+    position: relative;
+    height: 100%;
 
 
-// $colors1: (#10516e, #166b92, #1c82b1, #319dcf, #319dcf);
-// $colors2: (#651c72, #802291, #9226a5, #a42cb9, #b632ce);
-// $colors3: (#2a682c, #347c36, #3f9742, #3e9241, #4caf50);
-// $colors4: (#848f26, #919c2b, #a1ad2e, #b5c433, #cddc39);
+  }
+}
 
+// Stats Section
+.skills-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  margin-top: 60px;
 
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+  }
 
-// .all {
-//   // background-color: #0c151d;
-//   text-align: center;
-//   padding: 25px;
-// }
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
 
-// .container {
-//   background-color: black;
-//   border-radius: 10px;
-// }
+.stat-card {
+  background: var(--background-card);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px var(--shadow-color);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 
-// .block-skills {
-//   width: 100%;
-//   color: #fff;
-//   background-color: black;
-//   padding: 15px;
-//   // border-radius: 10px;
-// }
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px var(--shadow-hover);
+  }
 
-// .block-skills h3 {
-//   font-weight: 500;
-// }
+  .stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 
-// h3 {
-//   position: relative;
-// }
+    i {
+      font-size: 20px;
+      color: white;
+    }
+  }
 
-// h3:hover {
-//   color: red;
-//   cursor: pointer;
-// }
+  .stat-info {
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
 
-// h3::after {
-//   content: "";
-//   position: absolute;
-//   width: 100%;
-//   height: 3px;
-//   bottom: 0;
-//   left: 0;
-//   background-color: #fff;
-//   visibility: hidden;
-//   -webkit-transform: scaleX(0);
-//   transform: scaleX(0);
-//   -webkit-transition: all 0.3s ease-in-out 0s;
-//   transition: all 0.3s ease-in-out 0s;
-//   text-align: center;
-// }
+    .stat-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0;
+    }
+  }
 
-// h3:hover::after {
-//   visibility: visible;
-//   -webkit-transform: scaleX(1);
-//   transform: scaleX(1);
-//   background-color: red;
-// }
+  @media (max-width: 480px) {
+    padding: 20px;
 
-// $height: 90;
-// $width: 90;
+    .stat-icon {
+      width: 44px;
+      height: 44px;
 
-// @for $i from 1 through 5 {
-//   .radius#{$i} {
-//     height: $height - ($i*10) + px;
-//     width: $width - ($i*10) + px;
-//     background-color: nth($colors3, $i);
-//   }
-// }
+      i {
+        font-size: 18px;
+      }
+    }
 
-// .radius {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   border-radius: 50%;
-// }
+    .stat-info {
+      .stat-number {
+        font-size: 1.25rem;
+      }
 
-// .radius1 img{
-//   // @for $i from 1 through 5 {
-//   //   @if length($arrayColors[colors#{$i}]) >= $i {
-//   //     background-color: nth($arrayColors[colors#{$i}], 5);
-//   //   }
-//   // }
-//   border-radius: 50%;
-// }
+      .stat-label {
+        font-size: 12px;
+      }
+    }
+  }
+}
 
-// .element {
-//   display: flex;
-//   align-items: center;
-//   border: 1px solid #319dcf;
-//   border-radius: 20px;
-//   color: #319dcf;
-// }
+// Responsive adjustments
+@media (max-width: 768px) {
+  .skills-content {
+    margin-bottom: 60px;
+  }
 
-// .element:hover{
-//   background-color:#1477a51e ;
-//   cursor: pointer;
-// }
+  .skills-grid,
+  .experience-section {
+    height: auto;
+    display: block;
+  }
 
-// .textSkill {
-//   text-align: center;
-// }
+  .timeline-container {
+    flex: none;
+  }
 
-// .element img{
-//   width: 24px;
-//   margin: 5px;
-// }
+  .timeline {
+    height: auto;
+  }
 
-// .carousel-btn {
-//   background: none;
-//   border: none;
-//   font-size: 30px;
-//   color: white;
-//   cursor: pointer;
-// }
+  .subsection-title {
+    font-size: 1.25rem;
 
-// .slides {
-//   display: flex;
-//   overflow: hidden;
-//   scroll-behavior: smooth;
-//   width: 100%;
-// }
+    i {
+      font-size: 1.125rem;
+    }
+  }
+}
 
-// .slide {
-//   min-width: 100%;
-//   transition: all 0.5s;
-// }
+@media (max-width: 480px) {
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .skills-content {
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+
+  .subsection-title {
+    margin-bottom: 24px;
+  }
+
+  .skills-stats {
+    margin-top: 40px;
+  }
+}

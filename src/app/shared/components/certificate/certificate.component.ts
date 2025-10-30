@@ -31,15 +31,21 @@ export class CertificateComponent implements OnInit {
     this.selectedIndex = index;
   }
 
-  next(){
-    if(this.selectedIndex > 1) return;
+  next(): void {
+    if (this.selectedIndex >= this.listCertificates.length - 1) return;
     this.selectedIndex++;
   }
 
-  previus(){
-    if(this.selectedIndex <= 0) return;
-
+  previus(): void {
+    if (this.selectedIndex <= 0) return;
     this.selectedIndex--;
+  }
+
+  openCertificate(certificate: Certificate): void {
+    // Implementar abertura do certificado em modal ou nova aba
+    if (certificate.image) {
+      window.open(certificate.image, '_blank');
+    }
   }
 
   ngOnInit(): void {

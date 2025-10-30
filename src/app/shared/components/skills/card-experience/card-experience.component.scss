@@ -1,0 +1,288 @@
+.experience-card {
+  display: flex;
+  gap: 24px;
+  position: relative;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: var(--background-card);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px var(--shadow-hover);
+    border-color: var(--primary-color);
+
+    .company-icon {
+      transform: scale(1.1);
+    }
+
+    .timeline-connector {
+      background: var(--gradient-primary);
+    }
+  }
+
+  &:last-child {
+    .timeline-connector {
+      display: none;
+    }
+  }
+}
+
+// Company Icon Section
+.company-icon-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+
+  .icon-wrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  .company-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-tertiary);
+    border: 3px solid var(--background-card);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    transition: all 0.3s ease;
+    overflow: hidden;
+
+    &.svg-icon {
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        :deep(svg) {
+          width: 32px !important;
+          height: 32px !important;
+          max-width: 32px;
+          max-height: 32px;
+        }
+      }
+    }
+
+    &.img-icon {
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+    }
+  }
+
+  .timeline-connector {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 60px;
+    background: var(--border-color);
+    transition: all 0.3s ease;
+  }
+}
+
+// Experience Content
+.experience-content {
+  flex: 1;
+  min-width: 0;
+
+  .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    gap: 16px;
+
+    .company-name {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0;
+      line-height: 1.3;
+      flex: 1;
+    }
+
+    .experience-date {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap;
+      background: var(--background-tertiary);
+      padding: 6px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+
+      i {
+        color: var(--primary-color);
+        font-size: 11px;
+      }
+    }
+  }
+
+  .position-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .experience-description {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    text-align: justify;
+  }
+
+  .experience-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      background: rgba(59, 130, 246, 0.1);
+      color: var(--primary-color);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .experience-card {
+    gap: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .company-icon-container {
+    .company-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+
+      &.svg-icon {
+        div {
+          :deep(svg) {
+            width: 26px !important;
+            height: 26px !important;
+            max-width: 26px;
+            max-height: 26px;
+          }
+        }
+      }
+    }
+
+    .timeline-connector {
+      top: 60px;
+      height: 50px;
+    }
+  }
+
+  .experience-content {
+    .experience-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+
+      .company-name {
+        font-size: 1.25rem;
+      }
+
+      .experience-date {
+        align-self: flex-start;
+      }
+    }
+
+    .position-title {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .experience-description {
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .company-icon-container {
+    align-self: center;
+
+    .timeline-connector {
+      display: none;
+    }
+  }
+
+  .experience-content {
+    .experience-header {
+      text-align: center;
+      align-items: center;
+
+      .company-name {
+        font-size: 1.125rem;
+        text-align: center;
+      }
+
+      .experience-date {
+        align-self: center;
+      }
+    }
+
+    .position-title {
+      justify-content: center;
+      font-size: 13px;
+    }
+
+    .experience-description {
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .experience-tags {
+      justify-content: center;
+    }
+  }
+}
