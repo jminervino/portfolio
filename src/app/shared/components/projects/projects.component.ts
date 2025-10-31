@@ -9,6 +9,8 @@ import { ProjectsService } from 'src/app/core/services/projects.service';
 })
 export class ProjectsComponent implements OnInit {
   listProjects: Project[] = [];
+  filteredProjects: Project[] = [];
+  activeFilter: 'Todos' | 'Frontend' | 'Web' | 'Full Stack' = 'Todos';
 
   constructor(
     private projectsService: ProjectsService,
@@ -16,6 +18,7 @@ export class ProjectsComponent implements OnInit {
 
   ngOnInit(): void {
     this.listProjects = this.projectsService.getProjects();
+    this.applyFilter('Todos');
   }
 
   scrollToContact(): void {
@@ -23,5 +26,17 @@ export class ProjectsComponent implements OnInit {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  applyFilter(filter: 'Todos' | 'Frontend' | 'Web' | 'Full Stack'): void {
+    this.activeFilter = filter;
+    if (filter === 'Todos') {
+      this.filteredProjects = this.listProjects;
+      return;
+    }
+    const normalized = filter.toLowerCase();
+    this.filteredProjects = this.listProjects.filter((p) =>
+      (p.categories || []).some((c) => c.toLowerCase() === normalized)
+    );
   }
 }

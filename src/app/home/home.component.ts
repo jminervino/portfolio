@@ -64,8 +64,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   private isDeleting = false;
   private typingTexts = [
     'Desenvolvedor Full Stack',
-    'Especialista em Angular & React',
-    'Backend com Node.js',
+    'Especialista em Angular',
+    'Backend com NestJS + Java',
     'Criador de Soluções Web',
     'Solucionador de Problemas'
   ];

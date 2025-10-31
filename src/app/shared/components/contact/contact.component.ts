@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailService } from '../../../core/services/email.service';
 
 interface ContactFormData {
   name: string;
@@ -21,26 +22,39 @@ export class ContactComponent implements OnInit {
     message: ''
   };
 
-  constructor() {}
+  sending = false;
+  successMessage = '';
+  errorMessage = '';
+  infoMessage = '';
+
+  constructor(private emailService: EmailService) {}
 
   ngOnInit(): void {}
 
   onSubmit(): void {
     if (this.isFormValid()) {
-      // Simular envio do formulário
-      console.log('Formulário enviado:', this.formData);
-
-      // Criar mailto link como fallback
-      const subject = encodeURIComponent(this.formData.subject || 'Contato via Portfolio');
-      const body = encodeURIComponent(
-        `Nome: ${this.formData.name}\nEmail: ${this.formData.email}\n\nMensagem:\n${this.formData.message}`
-      );
-      const mailtoLink = `mailto:joaovictor@example.com?subject=${subject}&body=${body}`;
-
-      window.location.href = mailtoLink;
-
-      // Resetar formulário
-      this.resetForm();
+      this.successMessage = '';
+      this.errorMessage = '';
+      this.infoMessage = '';
+      this.sending = true;
+      this.emailService.sendContactEmail(this.formData).subscribe((sent) => {
+        if (!sent) {
+          const subject = encodeURIComponent(this.formData.subject || 'Contato via Portfolio');
+          const body = encodeURIComponent(
+            `Nome: ${this.formData.name}\nEmail: ${this.formData.email}\n\nMensagem:\n${this.formData.message}`
+          );
+          const mailtoLink = `mailto:jvminervinoaraujo@gmail.com?subject=${subject}&body=${body}`;
+          window.location.href = mailtoLink;
+          this.infoMessage = 'Abrindo seu cliente de e-mail...';
+        } else {
+          this.successMessage = 'Mensagem enviada com sucesso! Obrigado pelo contato.';
+        }
+        this.resetForm();
+        this.sending = false;
+      }, (err) => {
+        this.errorMessage = 'Não foi possível enviar no momento. Tente novamente mais tarde.';
+        this.sending = false;
+      });
     }
   }
 

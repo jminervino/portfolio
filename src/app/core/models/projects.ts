@@ -6,6 +6,7 @@ export interface Project {
   description: string;
   repository: string;
   ano: string;
+  categories?: string[];
 }
 
 export interface Technologies {

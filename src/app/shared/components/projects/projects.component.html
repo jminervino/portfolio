@@ -10,27 +10,18 @@
 
     <!-- Filter Buttons (opcional - pode implementar depois) -->
     <div class="project-filters">
-      <button class="filter-btn active">Todos</button>
-              <button class="filter-btn">Frontend</button>
-      <button class="filter-btn">Web</button>
-      <button class="filter-btn">Full Stack</button>
+      <button class="filter-btn" [class.active]="activeFilter === 'Todos'" (click)="applyFilter('Todos')">Todos</button>
+      <button class="filter-btn" [class.active]="activeFilter === 'Frontend'" (click)="applyFilter('Frontend')">Frontend</button>
+      <button class="filter-btn" [class.active]="activeFilter === 'Web'" (click)="applyFilter('Web')">Web</button>
+      <button class="filter-btn" [class.active]="activeFilter === 'Full Stack'" (click)="applyFilter('Full Stack')">Full Stack</button>
     </div>
 
     <!-- Projects Grid -->
     <div class="projects-grid">
-      <div class="project-item" *ngFor="let project of listProjects; let i = index">
+      <div class="project-item" *ngFor="let project of filteredProjects; let i = index">
         <app-card-project [project]="project"></app-card-project>
       </div>
     </div>
 
-    <!-- Call to Action -->
-    <div class="projects-cta">
-      <h3>Interessado em trabalhar comigo?</h3>
-      <p>Vamos conversar sobre como posso ajudar no seu próximo projeto</p>
-      <button class="cta-button" (click)="scrollToContact()">
-        <i class="fas fa-paper-plane"></i>
-        Entre em Contato
-      </button>
-    </div>
   </div>
 </section>

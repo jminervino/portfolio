@@ -40,7 +40,8 @@ export class ProjectsService {
       description:
         'Projeto desenvolvido com os Bootcampers de Java Spring com Angular e Firebase. Desenvolvido para criação de uma POC de atendimento de serviços de API com uso de Framework Spring Boot.',
       repository: 'https://github.com/jminervino/helpr',
-      ano: "2022"
+      ano: "2022",
+      categories: ['Full Stack', 'Web']
     },
     {
       image:
@@ -70,7 +71,8 @@ export class ProjectsService {
       description:
         'A Goodpay é uma plataforma de pagamento desenvolvida durante o bootcamp da Soulcode, com o objetivo de aplicar e aprimorar os conhecimentos adquiridos em HTML5, CSS3 e Bootstrap.',
       repository: 'https://github.com/jminervino/helpr',
-      ano: "2022"
+      ano: "2022",
+      categories: ['Frontend', 'Web']
     },
 
     {
@@ -99,29 +101,30 @@ export class ProjectsService {
       description:
         'Projeto proposto pela empresa FlexPag onde temos um historico de cotação com dados externos,  ',
       repository: 'https://github.com/jminervino/flexpag-desafio-frontend',
-      ano: "2022"
+      ano: "2022",
+      categories: ['Frontend', 'Web']
     },
-    {
-      image: './assets/img/projeto-copia-login-instagram.png',
-      name: 'Copia Login Instagram',
-      technologies: [
-        {
-          name: 'HTML',
-          color: 'color-html',
-          icon: '../../../../assets/img/icons8-html-5-64.png',
-          documentation: "https://html.com/document/"
-        },
-        {
-          name: 'CSS',
-          color: 'color-css',
-          icon: '../../../../assets/img/icons8-css3-64.png',
-          documentation: "https://developer.mozilla.org/en-US/docs/Web/CSS"
-        },
-      ],
-      description: 'Copia do Login do Instagram com CSS e HTML puro',
-      repository: 'https://github.com/jminervino/interface-instagram-login',
-      ano: "2021"
-    },
+    // {
+    //   image: './assets/img/projeto-copia-login-instagram.png',
+    //   name: 'Copia Login Instagram',
+    //   technologies: [
+    //     {
+    //       name: 'HTML',
+    //       color: 'color-html',
+    //       icon: '../../../../assets/img/icons8-html-5-64.png',
+    //       documentation: "https://html.com/document/"
+    //     },
+    //     {
+    //       name: 'CSS',
+    //       color: 'color-css',
+    //       icon: '../../../../assets/img/icons8-css3-64.png',
+    //       documentation: "https://developer.mozilla.org/en-US/docs/Web/CSS"
+    //     },
+    //   ],
+    //   description: 'Copia do Login do Instagram com CSS e HTML puro',
+    //   repository: 'https://github.com/jminervino/interface-instagram-login',
+    //   ano: "2021"
+    // },
   ];
 
   getProjects() {
