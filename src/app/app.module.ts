@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,28 +21,21 @@ import { MatLegacyButtonModule as MatButtonModule }from '@angular/material/legac
 
 
 
-@NgModule({
-  declarations: [AppComponent, HomeComponent, MyhistoryComponent],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    NgbModule,
-    CoreModule,
-    SharedModule,
-    BrowserAnimationsModule,
-    MatGridListModule,
-    MatCardModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule
-  ],
-  exports: [
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-})
+@NgModule({ declarations: [AppComponent, HomeComponent, MyhistoryComponent],
+    exports: [
+        MatSidenavModule,
+        MatListModule,
+        MatButtonModule
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        NgbModule,
+        CoreModule,
+        SharedModule,
+        BrowserAnimationsModule,
+        MatGridListModule,
+        MatCardModule,
+        MatSidenavModule,
+        MatListModule,
+        MatButtonModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
