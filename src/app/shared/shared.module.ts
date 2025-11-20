@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatLegacyDialogModule as MatDialogModule } from '@angular/material/legacy-dialog';
 import { ProjectsComponent } from '../shared/components/projects/projects.component';
 import { SkillsComponent } from '../shared/components/skills/skills.component';
 import { SocialComponent } from '../shared/components/social/social.component';
@@ -11,7 +11,7 @@ import { AboutMeComponent } from './components/about-me/about-me.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CoreModule } from '../core/core.module';
 import {MatGridListModule} from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
+import {MatLegacyCardModule as MatCardModule} from '@angular/material/legacy-card';
 import { CardSkillsComponent } from './components/skills/card-skills/card-skills.component';
 import { CardExperienceComponent } from './components/skills/card-experience/card-experience.component';
 import { CardProjectComponent } from './components/projects/card-project/card-project.component';
