@@ -3,9 +3,10 @@ import { Certificate } from 'src/app/core/models/certificate';
 import { CertificatesService } from 'src/app/core/services/certificates.service';
 
 @Component({
-  selector: 'app-certificate',
-  templateUrl: './certificate.component.html',
-  styleUrls: ['./certificate.component.scss'],
+    selector: 'app-certificate',
+    templateUrl: './certificate.component.html',
+    styleUrls: ['./certificate.component.scss'],
+    standalone: false
 })
 export class CertificateComponent implements OnInit {
   listCertificates: Certificate[] = [];

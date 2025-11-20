@@ -3,9 +3,10 @@ import { NavbarLinks } from '../../models/components';
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss'],
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    styleUrls: ['./navbar.component.scss'],
+    standalone: false
 })
 export class NavbarComponent implements OnInit {
   navbarLinks: NavbarLinks[] = [

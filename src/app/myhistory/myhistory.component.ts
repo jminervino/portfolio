@@ -3,9 +3,10 @@ import { Timeline } from '../core/models/timesline';
 import { TimelineService } from '../core/services/timeline.service';
 
 @Component({
-  selector: 'app-myhistory',
-  templateUrl: './myhistory.component.html',
-  styleUrls: ['./myhistory.component.scss']
+    selector: 'app-myhistory',
+    templateUrl: './myhistory.component.html',
+    styleUrls: ['./myhistory.component.scss'],
+    standalone: false
 })
 export class MyhistoryComponent implements OnInit {
   listTimeline: Timeline[] = [];

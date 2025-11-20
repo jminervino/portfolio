@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProjetoResumo } from '../card-professional-project/card-professional-project.component';
 
 @Component({
-  selector: 'app-professional-projects-example',
-  templateUrl: './professional-projects-example.component.html',
-  styleUrls: ['./professional-projects-example.component.scss']
+    selector: 'app-professional-projects-example',
+    templateUrl: './professional-projects-example.component.html',
+    styleUrls: ['./professional-projects-example.component.scss'],
+    standalone: false
 })
 export class ProfessionalProjectsExampleComponent implements OnInit {
 

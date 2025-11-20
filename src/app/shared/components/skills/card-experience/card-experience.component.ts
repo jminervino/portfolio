@@ -1,9 +1,10 @@
 import { Component, Input, OnInit, } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 @Component({
-  selector: 'app-card-experience',
-  templateUrl: './card-experience.component.html',
-  styleUrls: ['./card-experience.component.scss']
+    selector: 'app-card-experience',
+    templateUrl: './card-experience.component.html',
+    styleUrls: ['./card-experience.component.scss'],
+    standalone: false
 })
 export class CardExperienceComponent implements OnInit {
 

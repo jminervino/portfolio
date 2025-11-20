@@ -9,9 +9,10 @@ export interface ProjetoResumo {
 }
 
 @Component({
-  selector: 'app-card-professional-project',
-  templateUrl: './card-professional-project.component.html',
-  styleUrls: ['./card-professional-project.component.scss']
+    selector: 'app-card-professional-project',
+    templateUrl: './card-professional-project.component.html',
+    styleUrls: ['./card-professional-project.component.scss'],
+    standalone: false
 })
 export class CardProfessionalProjectComponent implements OnInit {
   @Input() projetoResumo!: ProjetoResumo;

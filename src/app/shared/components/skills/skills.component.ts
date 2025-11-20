@@ -4,9 +4,10 @@ import { SkillsService } from 'src/app/core/services/skills.service';
 
 
 @Component({
-  selector: 'app-skills',
-  templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss'],
+    selector: 'app-skills',
+    templateUrl: './skills.component.html',
+    styleUrls: ['./skills.component.scss'],
+    standalone: false
 })
 export class SkillsComponent implements OnInit {
   skills: Skills[] = [];
