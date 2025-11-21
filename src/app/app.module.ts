@@ -14,10 +14,10 @@ import { MyhistoryComponent } from './myhistory/myhistory.component';
 
 
 import {MatGridListModule} from '@angular/material/grid-list';
-import {MatLegacyCardModule as MatCardModule} from '@angular/material/legacy-card';
+import {MatCardModule} from '@angular/material/card';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatLegacyListModule as MatListModule }from '@angular/material/legacy-list';
-import { MatLegacyButtonModule as MatButtonModule }from '@angular/material/legacy-button';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
